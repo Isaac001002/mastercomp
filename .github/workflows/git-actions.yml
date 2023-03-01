@@ -1,28 +1,28 @@
-name: my-actions
-on:
-  push:
-    branches:
-      - main
+   name: my-actions
+   on:
+     push:
+       branches:
+         - main
 
-jobs:
-  my-helloworld-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install aufdenpunkt/python-safety-check
-      
-      - name: Run safety check
-        run: safety check
+   jobs:
+     my-helloworld-job:
+       runs-on: ubuntu-latest
+       steps:
+         - name: Checkout code
+           uses: actions/checkout@v2
 
-      - name: Say Hello World
-        run: echo 'Hello World'
+         - name: Install dependencies
+           run: |
+             python -m pip install --upgrade pip
+             pip install aufdenpunkt/python-safety-check
 
-      - name: View a file
-        run: |
-          echo 'Viewing the file: '
-          cat requirements.txt
+         - name: Run safety check
+           run: safety check
+
+         - name: Say Hello World
+           run: echo 'Hello World'
+
+         - name: View a file
+           run: |
+             echo 'Viewing the file: '
+             cat requirements.txt
