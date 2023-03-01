@@ -4,6 +4,12 @@ import configparser
 import logging
 import redis
 import os
+from boto.s3.connection import S3Connection
+
+access_key = os.environ.get('S3_KEY')
+secret_key = os.environ.get('S3_SECRET')
+
+s3 = S3Connection(access_key, secret_key)
 
 global redis1
 
