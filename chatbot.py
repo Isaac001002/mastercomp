@@ -3,9 +3,12 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Callb
 import configparser
 import logging
 import redis
+import os
 
 global redis1
 
+from boto.s3.connection import S3Connection
+s3 = S3Connection(os.environ['8N029N81'], os.environ['9s83109d3+583493190'])
 
 def main():
     # Load your token and create an Updater for your Bot
